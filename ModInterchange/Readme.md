@@ -16,14 +16,14 @@ your inventory.
 
 A few changes are required server side:
 
-Add the following lines to the nginx and orleans serivices in docker-compose.yml,
-in the 'volumes' section for each of them:
+Add the following lines to the `nginx` and `orleans` services in `docker-compose.yml`,
+in the `volumes` section for each of them:
 
     - ./NQInterchange:/NQInterchange
 
 Modify nginx/conf.d/backoffice.conf by adding before the existing 'location':
 
-     location /NQInterchange {
+     location /nqinterchange {
         alias /NQInterchange;
     }
 
